@@ -1,0 +1,142 @@
+What is time complexity(TC)?
+ -> Interviewer will judge on the basis of TC and Space complexity(SC),
+ -> TC != time taken by the code to execute
+Definition:
+Time Complexity is the rate at which the time taken increases 
+with respect to the input size.
+
+Illustrations:
+
+1. Old Windows:
+   Time vs Input Size
+   (Linear Growth - steep)
+
+   5 |          *
+   4 |        *
+   3 |      *
+   2 |    *
+   1 |  *
+   0 |*_____________________
+       0   10   20   30   40
+
+   -> Rate of increase θ is large.
+
+
+2. New Methods:
+   Time vs Input Size
+   (Linear Growth - less steep)
+
+   3 |       *
+   2 |     *
+   1 |   *
+   0 | *____________________
+       0   10   20   30   40
+
+   -> Rate of increase θ is smaller.
+
+
+Key Idea:
+Time complexity helps us analyze and compare how efficiently
+different algorithms or methods scale with increasing input size. 
+
+ -> TC is the number of operations executed by the code.
+
+
+---------------------------------------------------------------------
+
+
+Time Complexity (TC) -> Big-O Notation -> O()
+
+Big-O Notation:
+- Represents the time taken as a function of input size.
+- Used to express the upper bound (worst case scenario).
+
+Example Code:
+for (i = 1; i <= N; i++) {
+    cout << "Raj";
+}
+
+Analysis:
+- The loop runs N times.
+- Inside the loop, the statement executes a constant-time operation.
+- Therefore, total time = N * 3 operations (constant factor).
+
+Time Complexity:
+O(N x 3) → Simplified to O(N)
+
+Key Points:
+1. TC considers worst-case scenarios.
+2. Avoid constants in Big-O (ignore x3).
+3. Avoid lower order terms, keep only the dominating term.
+
+
+------------------------------------------------------------------------
+
+
+Big-O (O) → Worst Case → { Upper Bound }
+
+Theta (Θ) → Average Complexity
+
+Omega (Ω) → Best Case → { Lower Bound }
+
+
+------------------------------------------------------------------------
+
+
+We have two nested loops:
+
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+        // Block of code (Constant time)
+    }
+}
+
+Step Analysis:
+- Outer loop runs N times (i = 0 to N-1).
+- Inner loop runs N times for each value of i.
+- So total iterations = N × N = N^2.
+
+Time Complexity:
+- Each block execution takes constant time.
+- Total work done = N^2 × O(1) = O(N^2).
+
+
+------------------------------------------------------------------------
+
+We have nested loops with dependent range:
+
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j <= i; j++) {
+        // Code
+    }
+}
+
+Step Analysis:
+- Outer loop runs N times (i = 0 to N-1).
+- Inner loop runs (i+1) times for each i.
+
+Iteration count:
+i = 0 → 1 iteration
+i = 1 → 2 iterations
+i = 2 → 3 iterations
+...
+i = N-1 → N iterations
+
+Total iterations = 1 + 2 + 3 + ... + N
+                 = N × (N+1) / 2
+                 = (N^2 / 2) + (N / 2)
+
+Time Complexity:
+- Dominant term is N^2 / 2.
+- Therefore, overall complexity = O(N^2).
+
+
+------------------------------------------------------------------------
+
+
+Space Complexity:-
+
+Space Complexity = Auxiliary  Space + Input Space 
+
+Auxiliary Space: Space that you have to solve the problem
+Input Space: the space that you take to store the input
